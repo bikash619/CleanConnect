@@ -1,8 +1,27 @@
 import { Link } from "wouter";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 800);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
-    <footer className="bg-primary text-white pt-12 pb-6">
+    <footer className="bg-primary text-white pt-12 pb-6 relative">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
@@ -38,11 +57,11 @@ export default function Footer() {
           <div>
             <h3 className="font-heading font-bold text-xl mb-4">Services</h3>
             <ul className="space-y-2">
-              <li><a href="/#services" className="hover:text-light transition duration-300">Regular Cleaning</a></li>
-              <li><a href="/#services" className="hover:text-light transition duration-300">Deep Cleaning</a></li>
-              <li><a href="/#services" className="hover:text-light transition duration-300">Recurring Service</a></li>
-              <li><a href="/#services" className="hover:text-light transition duration-300">Move In/Out Cleaning</a></li>
-              <li><a href="/#services" className="hover:text-light transition duration-300">Office Cleaning</a></li>
+              <li><a href="/#services" className="hover:text-light transition duration-300">Window Cleaning</a></li>
+              <li><a href="/#services" className="hover:text-light transition duration-300">Gutters Cleaning</a></li>
+              <li><a href="/#services" className="hover:text-light transition duration-300">Bond Cleaning</a></li>
+              <li><a href="/#services" className="hover:text-light transition duration-300">Solar Panel Cleaning</a></li>
+              <li><a href="/#services" className="hover:text-light transition duration-300">General Cleaning</a></li>
             </ul>
           </div>
           
@@ -80,6 +99,17 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Back to Top Button */}
+      {showBackToTop && (
+        <button 
+          onClick={scrollToTop}
+          className="fixed right-6 bottom-6 bg-accent text-white p-3 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 z-50 animate-fade-in"
+          aria-label="Back to top"
+        >
+          <i className="fas fa-arrow-up"></i>
+        </button>
+      )}
     </footer>
   );
 }

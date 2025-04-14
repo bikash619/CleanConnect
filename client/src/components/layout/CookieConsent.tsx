@@ -1,14 +1,24 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { useCookieConsent } from "@/hooks/use-cookie-consent";
-import { useState } from "react";
 
 export default function CookieConsent() {
-  const { cookiesAccepted, acceptCookies } = useCookieConsent();
+  const [showConsent, setShowConsent] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
 
-  if (cookiesAccepted) {
-    return null;
-  }
+  useEffect(() => {
+    // Check if user has already accepted cookies
+    const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+    if (!cookiesAccepted) {
+      setShowConsent(true);
+    }
+  }, []);
+
+  const acceptCookies = () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    setShowConsent(false);
+  };
+
+  if (!showConsent) return null;
 
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-white p-4 shadow-lg z-50">
@@ -28,14 +38,14 @@ export default function CookieConsent() {
             <Button 
               variant="default" 
               onClick={acceptCookies}
-              className="bg-primary text-white hover:bg-accent transition duration-300"
+              className="bg-primary text-white hover:bg-accent transition duration-300 px-5 py-2 h-auto rounded-md text-sm"
             >
               Accept
             </Button>
             <Button 
               variant="outline" 
               onClick={() => setShowSettings(!showSettings)}
-              className="bg-gray-200 text-gray-700 hover:bg-gray-300 transition duration-300"
+              className="bg-gray-100 text-gray-700 hover:bg-gray-200 transition duration-300 px-5 py-2 h-auto rounded-md text-sm"
             >
               {showSettings ? 'Hide Settings' : 'Settings'}
             </Button>
@@ -43,9 +53,9 @@ export default function CookieConsent() {
         </div>
 
         {showSettings && (
-          <div className="mt-4 bg-gray-100 p-4 rounded-lg">
+          <div className="mt-4 bg-gray-50 p-4 rounded-lg border border-gray-100">
             <h4 className="font-heading font-semibold mb-2">Cookie Settings</h4>
-            <div className="space-y-2">
+            <div className="space-y-3">
               <div className="flex items-start">
                 <input 
                   type="checkbox" 
@@ -76,7 +86,7 @@ export default function CookieConsent() {
               <Button 
                 variant="default" 
                 onClick={acceptCookies}
-                className="bg-primary text-white hover:bg-accent transition duration-300"
+                className="bg-primary text-white hover:bg-accent transition duration-300 px-5 py-2 h-auto rounded-md text-sm"
               >
                 Save Preferences
               </Button>

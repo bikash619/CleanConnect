@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { contactFormSchema } from "@shared/schema";
 import { Button } from "@/components/ui/button";
@@ -19,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Link } from "wouter";
+import emailjs from '@emailjs/browser';
 
 type FormValues = {
   name: string;
@@ -43,33 +42,43 @@ export default function ContactSection() {
     },
   });
 
-  const contactMutation = useMutation({
-    mutationFn: async (data: FormValues) => {
-      const res = await apiRequest("POST", "/api/contact", data);
-      return res.json();
-    },
-    onSuccess: (data) => {
-      toast({
-        title: "Message Sent!",
-        description: `Thank you for contacting us. ${data.emailSent ? "A confirmation email has been sent to your inbox." : ""} We'll get back to you shortly.`,
-        variant: "default",
-      });
-      form.reset();
-      setIsSubmitting(false);
-    },
-    onError: (error) => {
+  async function onSubmit(data: FormValues) {
+    setIsSubmitting(true);
+    
+    try {
+      // Using EmailJS with the provided credentials
+      const result = await emailjs.send(
+        'service_dh2t2qd',  // Your service ID
+        'template_ww91i46', // Updated template ID for contact form
+        {
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          message: data.message
+        },
+        'XRuGUSHOAcpMBXTIC'  // Your public key
+      );
+
+      if (result.status === 200) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for contacting us. We'll get back to you shortly.",
+          variant: "default",
+        });
+        form.reset();
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
       toast({
         title: "Error",
-        description: error instanceof Error ? error.message : "Failed to send message. Please try again.",
+        description: "Failed to send your message. Please try again later.",
         variant: "destructive",
       });
+    } finally {
       setIsSubmitting(false);
     }
-  });
-
-  function onSubmit(data: FormValues) {
-    setIsSubmitting(true);
-    contactMutation.mutate(data);
   }
 
   const contactInfo = [

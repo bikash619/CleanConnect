@@ -87,56 +87,56 @@ export class MemStorage implements IStorage {
       {
         name: "Window Cleaning",
         description: "Professional window cleaning service for crystal clear results, inside and out.",
-        imageUrl: "https://images.unsplash.com/photo-1575883242366-1864894de42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+        imageUrl: "https://images.pexels.com/photos/38325/vacuum-cleaner-carpet-cleaner-housekeeping-housework-38325.jpeg?auto=compress&cs=tinysrgb&w=600",
         price: "From $80",
         sortOrder: 1
       },
       {
         name: "Gutters Cleaning",
         description: "Complete gutter cleaning service to remove debris and ensure proper water flow.",
-        imageUrl: "https://images.unsplash.com/photo-1530976972097-a08586074c48?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+        imageUrl: "https://images.pexels.com/photos/6195325/pexels-photo-6195325.jpeg?auto=compress&cs=tinysrgb&w=600",
         price: "From $120",
         sortOrder: 2
       },
       {
         name: "Bond Cleaning",
         description: "Thorough end of lease cleaning to ensure you get your deposit back when moving out.",
-        imageUrl: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+        imageUrl: "https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=600",
         price: "From $250",
         sortOrder: 3
       },
       {
         name: "Solar Panel Cleaning",
         description: "Specialized cleaning for your solar panels to maintain maximum efficiency and performance.",
-        imageUrl: "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+        imageUrl: "https://images.pexels.com/photos/9875441/pexels-photo-9875441.jpeg?auto=compress&cs=tinysrgb&w=600",
         price: "From $150",
         sortOrder: 4
       },
       {
         name: "General Cleaning",
         description: "Comprehensive cleaning of all living areas including dusting, vacuuming, and sanitizing surfaces.",
-        imageUrl: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+        imageUrl: "https://images.pexels.com/photos/4108771/pexels-photo-4108771.jpeg?auto=compress&cs=tinysrgb&w=600",
         price: "From $100",
         sortOrder: 5
       },
       {
         name: "Blinds Cleaning",
         description: "Detailed cleaning of all types of blinds to remove dust and allergens for a healthier home.",
-        imageUrl: "https://images.unsplash.com/photo-1595514535415-dae8970c84d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+        imageUrl: "https://images.pexels.com/photos/7166905/pexels-photo-7166905.jpeg?auto=compress&cs=tinysrgb&w=600",
         price: "From $90",
         sortOrder: 6
       },
       {
         name: "Carpet & Upholstery Cleaning",
         description: "Deep cleaning for carpets and upholstery to remove stains, odors, and allergens.",
-        imageUrl: "https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+        imageUrl: "https://images.pexels.com/photos/4108732/pexels-photo-4108732.jpeg?auto=compress&cs=tinysrgb&w=600",
         price: "From $120",
         sortOrder: 7
       },
       {
         name: "Tile & Grout Cleaning",
         description: "Professional cleaning of tile surfaces and grout lines to restore their original appearance.",
-        imageUrl: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+        imageUrl: "https://images.pexels.com/photos/4108775/pexels-photo-4108775.jpeg?auto=compress&cs=tinysrgb&w=600",
         price: "From $180",
         sortOrder: 8
       }

@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { bookingFormSchema } from "@shared/schema";
 import { Button } from "@/components/ui/button";
@@ -20,6 +18,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Link } from "wouter";
+import emailjs from '@emailjs/browser';
 
 type FormValues = {
   serviceType: string;
@@ -54,33 +53,48 @@ export default function BookingSection() {
     },
   });
 
-  const bookingMutation = useMutation({
-    mutationFn: async (data: FormValues) => {
-      const res = await apiRequest("POST", "/api/bookings", data);
-      return res.json();
-    },
-    onSuccess: (data) => {
-      toast({
-        title: "Booking Submitted!",
-        description: `We'll confirm your booking shortly. ${data.emailSent ? "A confirmation email has been sent to your inbox." : ""} Thank you for choosing Spark Pro Cleaning.`,
-        variant: "default",
-      });
-      form.reset();
-      setIsSubmitting(false);
-    },
-    onError: (error) => {
+  async function onSubmit(data: FormValues) {
+    setIsSubmitting(true);
+    
+    try {
+      // Using EmailJS with the provided credentials
+      const result = await emailjs.send(
+        'service_dh2t2qd',  // Your service ID
+        'template_3kk2fkr', // Your template ID
+        {
+          service_type: data.serviceType,
+          home_size: data.homeSize,
+          date: data.date,
+          time: data.time,
+          name: data.name,
+          phone: data.phone,
+          email: data.email,
+          address: data.address,
+          notes: data.notes || 'No special instructions'
+        },
+        'XRuGUSHOAcpMBXTIC'  // Your public key
+      );
+
+      if (result.status === 200) {
+        toast({
+          title: "Booking Submitted!",
+          description: "We'll confirm your booking shortly. Thank you for choosing Spark Pro Cleaning.",
+          variant: "default",
+        });
+        form.reset();
+      } else {
+        throw new Error('Failed to submit booking');
+      }
+    } catch (error) {
+      console.error('Error submitting booking:', error);
       toast({
         title: "Error",
-        description: error instanceof Error ? error.message : "Failed to submit booking. Please try again.",
+        description: "Failed to submit your booking. Please try again later.",
         variant: "destructive",
       });
+    } finally {
       setIsSubmitting(false);
     }
-  });
-
-  function onSubmit(data: FormValues) {
-    setIsSubmitting(true);
-    bookingMutation.mutate(data);
   }
 
   return (
