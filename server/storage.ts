@@ -148,7 +148,7 @@ export class MemStorage implements IStorage {
     const defaultTestimonials: InsertTestimonial[] = [
       {
         name: "Sarah Johnson",
-        content: "PurpleClean has been cleaning my home for over 6 months now, and I couldn't be happier with their service. The team is professional, thorough, and always on time.",
+        content: "Spark Pro Cleaning has been cleaning my home for over 6 months now, and I couldn't be happier with their service. The team is professional, thorough, and always on time.",
         rating: 5,
         imageUrl: "https://randomuser.me/api/portraits/women/42.jpg",
         displayOrder: 1
@@ -162,7 +162,7 @@ export class MemStorage implements IStorage {
       },
       {
         name: "Jennifer Chen",
-        content: "As a busy professional, I don't have time to keep my home as clean as I'd like. PurpleClean's recurring service has been a lifesaver! Highly recommend!",
+        content: "As a busy professional, I don't have time to keep my home as clean as I'd like. Spark Pro Cleaning's recurring service has been a lifesaver! Highly recommend!",
         rating: 5,
         imageUrl: "https://randomuser.me/api/portraits/women/68.jpg",
         displayOrder: 3

@@ -59,10 +59,10 @@ export default function BookingSection() {
       const res = await apiRequest("POST", "/api/bookings", data);
       return res.json();
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
       toast({
         title: "Booking Submitted!",
-        description: "We'll confirm your booking shortly. Thank you for choosing PurpleClean.",
+        description: `We'll confirm your booking shortly. ${data.emailSent ? "A confirmation email has been sent to your inbox." : ""} Thank you for choosing Spark Pro Cleaning.`,
         variant: "default",
       });
       form.reset();
