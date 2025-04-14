@@ -13,7 +13,7 @@ export default function ServicesSection() {
       {/* Background decorations */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-light/50 rounded-full -translate-y-1/4 translate-x-1/4"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-light/50 rounded-full translate-y-1/4 -translate-x-1/4"></div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-accent bg-light px-4 py-1.5 rounded-full mb-4 inline-block">OUR EXPERTISE</span>
@@ -114,6 +114,6 @@ function getServiceIcon(serviceName: string): string {
     "Carpet & Upholstery Cleaning": "fas fa-couch",
     "Tile & Grout Cleaning": "fas fa-border-all"
   };
-  
+
   return icons[serviceName] || "fas fa-spray-can-sparkles";
 }
