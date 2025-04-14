@@ -72,11 +72,18 @@ export default function ServicesSection() {
                     <h3 className="font-heading font-semibold text-xl text-primary">{service.name}</h3>
                   </div>
                   <p className="text-gray-600 mb-6 text-sm flex-grow">{service.description}</p>
-                  <a href="#booking" className="block mt-auto">
-                    <Button className="w-full bg-white hover:bg-primary text-primary hover:text-white border border-primary transition-all duration-300 rounded-full shadow-sm hover:shadow-md font-medium">
-                      Book This Service
-                    </Button>
-                  </a>
+                  <div className="flex flex-col gap-3 mt-auto">
+                    <a href="#booking" className="block">
+                      <Button className="w-full bg-white hover:bg-primary text-primary hover:text-white border border-primary transition-all duration-300 rounded-full shadow-sm hover:shadow-md font-medium">
+                        Book This Service
+                      </Button>
+                    </a>
+                    <a href="#booking" className="block">
+                      <Button className="w-full bg-primary hover:bg-accent text-white transition-all duration-300 rounded-full shadow-sm hover:shadow-md font-medium">
+                        Book a Service
+                      </Button>
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
             ))}
