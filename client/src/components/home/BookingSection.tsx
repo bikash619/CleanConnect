@@ -240,7 +240,7 @@ export default function BookingSection() {
                         <FormControl>
                           <Input
                             type="date"
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-accent focus:border-accent"
+                            className="w-full p-3 border-none bg-light rounded-lg focus:ring-2 focus:ring-primary/40 shadow-sm hover:bg-light/70 transition-all duration-300 form-field"
                             disabled={isSubmitting}
                             {...field}
                           />
@@ -286,7 +286,7 @@ export default function BookingSection() {
                           <FormLabel className="text-gray-700 font-semibold">Full Name</FormLabel>
                           <FormControl>
                             <Input
-                              className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-accent focus:border-accent"
+                              className="w-full p-3 border-none bg-light rounded-lg focus:ring-2 focus:ring-primary/40 shadow-sm hover:bg-light/70 transition-all duration-300 form-field"
                               placeholder="Your full name"
                               disabled={isSubmitting}
                               {...field}
@@ -306,7 +306,7 @@ export default function BookingSection() {
                           <FormControl>
                             <Input
                               type="tel"
-                              className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-accent focus:border-accent"
+                              className="w-full p-3 border-none bg-light rounded-lg focus:ring-2 focus:ring-primary/40 shadow-sm hover:bg-light/70 transition-all duration-300 form-field"
                               placeholder="Your phone number"
                               disabled={isSubmitting}
                               {...field}
@@ -327,7 +327,7 @@ export default function BookingSection() {
                         <FormControl>
                           <Input
                             type="email"
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-accent focus:border-accent"
+                            className="w-full p-3 border-none bg-light rounded-lg focus:ring-2 focus:ring-primary/40 shadow-sm hover:bg-light/70 transition-all duration-300 form-field"
                             placeholder="Your email address"
                             disabled={isSubmitting}
                             {...field}
@@ -347,7 +347,7 @@ export default function BookingSection() {
                         <FormControl>
                           <Textarea
                             rows={3}
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-accent focus:border-accent"
+                            className="w-full p-3 border-none bg-light rounded-lg focus:ring-2 focus:ring-primary/40 shadow-sm hover:bg-light/70 transition-all duration-300 form-field"
                             placeholder="Your full address"
                             disabled={isSubmitting}
                             {...field}
@@ -367,7 +367,7 @@ export default function BookingSection() {
                         <FormControl>
                           <Textarea
                             rows={2}
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-accent focus:border-accent"
+                            className="w-full p-3 border-none bg-light rounded-lg focus:ring-2 focus:ring-primary/40 shadow-sm hover:bg-light/70 transition-all duration-300 form-field"
                             placeholder="Any specific requirements or notes"
                             disabled={isSubmitting}
                             {...field}
@@ -402,7 +402,7 @@ export default function BookingSection() {
 
                   <Button
                     type="submit"
-                    className="w-full bg-accent text-white py-3 px-6 rounded-lg font-heading font-semibold text-lg hover:bg-primary transition duration-300"
+                    className="w-full bg-gradient-to-r from-primary to-accent text-white py-4 px-8 rounded-full font-heading font-semibold text-lg hover:shadow-lg hover:-translate-y-1 transition-all duration-300 mt-4"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (

@@ -70,11 +70,11 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p>&copy; {new Date().getFullYear()} PurpleClean. All rights reserved.</p>
           <div className="mt-4 md:mt-0 flex space-x-6">
-            <Link href="/privacy-policy">
-              <a className="hover:text-light transition duration-300">Privacy Policy</a>
+            <Link href="/privacy-policy" className="hover:text-light transition duration-300">
+              Privacy Policy
             </Link>
-            <Link href="/terms-and-conditions">
-              <a className="hover:text-light transition duration-300">Terms of Service</a>
+            <Link href="/terms-and-conditions" className="hover:text-light transition duration-300">
+              Terms of Service
             </Link>
             <a href="#" className="hover:text-light transition duration-300">Sitemap</a>
           </div>
