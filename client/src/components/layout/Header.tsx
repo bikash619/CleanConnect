@@ -36,7 +36,8 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <Link href="/" className="font-heading font-bold flex items-center">
-            <img src={logoSvg} alt="PurpleClean Logo" className="h-10 w-auto" />
+            <img src={logoSvg} alt="Spark Pro Logo" className="h-10 w-auto" />
+            <span className="ml-2 text-xl">Spark Pro</span>
           </Link>
 
           {/* Desktop Navigation */}

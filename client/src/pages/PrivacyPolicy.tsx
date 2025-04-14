@@ -5,8 +5,8 @@ export default function PrivacyPolicy() {
   return (
     <>
       <Helmet>
-        <title>Privacy Policy | PurpleClean</title>
-        <meta name="description" content="Privacy Policy for PurpleClean cleaning services." />
+        <title>Privacy Policy | Spark Pro Cleaning</title>
+        <meta name="description" content="Privacy Policy for Spark Pro Cleaning services." />
         <meta name="robots" content="noindex" />
       </Helmet>
 
@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
               
               <h2 className="text-xl font-heading font-semibold text-primary mt-8 mb-4">1. Introduction</h2>
               <p>
-                At PurpleClean, we respect your privacy and are committed to protecting your personal data.
+                At Spark Pro Cleaning, we respect your privacy and are committed to protecting your personal data.
                 This privacy policy will inform you about how we look after your personal data when you visit our
                 website and tell you about your privacy rights and how the law protects you.
               </p>
@@ -80,7 +80,7 @@ export default function PrivacyPolicy() {
                 If you have any questions about this privacy policy or our privacy practices, please contact us at:
               </p>
               <address className="not-italic mt-2">
-                Email: privacy@purpleclean.com<br />
+                Email: privacy@sparkpro.com<br />
                 Phone: (555) 123-4567<br />
                 Address: 123 Cleaning Street, Suite 456, Sparkle City, SC 12345
               </address>

@@ -30,7 +30,7 @@ export default function HeroSection() {
               </span> for Your Home
             </h1>
             <p className="text-lg md:text-xl mb-10 text-white/90 max-w-md">
-              From windows to deep cleaning, our professional team delivers exceptional results that exceed expectations every time.
+              <span className="font-bold">Spark with Pros</span> - From windows to deep cleaning, our professional team delivers exceptional results that exceed expectations every time.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
               <a href="#booking">

@@ -5,8 +5,8 @@ export default function TermsAndConditions() {
   return (
     <>
       <Helmet>
-        <title>Terms and Conditions | PurpleClean</title>
-        <meta name="description" content="Terms and Conditions for PurpleClean cleaning services." />
+        <title>Terms and Conditions | Spark Pro Cleaning</title>
+        <meta name="description" content="Terms and Conditions for Spark Pro Cleaning services." />
         <meta name="robots" content="noindex" />
       </Helmet>
 
@@ -26,7 +26,7 @@ export default function TermsAndConditions() {
               
               <h2 className="text-xl font-heading font-semibold text-primary mt-8 mb-4">2. Services Description</h2>
               <p>
-                PurpleClean provides professional cleaning services for residential and commercial properties.
+                Spark Pro Cleaning provides professional cleaning services for residential and commercial properties.
                 The specific services to be provided will be those selected by you during the booking process.
               </p>
               
