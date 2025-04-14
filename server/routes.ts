@@ -8,6 +8,7 @@ import {
   contactFormSchema
 } from "@shared/schema";
 import { fromZodError } from "zod-validation-error";
+import { sendBookingConfirmationEmail, sendContactInquiryEmail } from "./services/emailService";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // API Routes
@@ -71,7 +72,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
       
       const booking = await storage.createBooking(bookingData);
-      res.status(201).json({ success: true, booking });
+      
+      // Send confirmation email
+      const emailSent = await sendBookingConfirmationEmail(bookingData);
+      
+      res.status(201).json({ success: true, booking, emailSent });
     } catch (error) {
       console.error('Error creating booking:', error);
       if (error instanceof Error) {
@@ -102,7 +107,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
       
       const inquiry = await storage.createContactInquiry(contactData);
-      res.status(201).json({ success: true, inquiry });
+      
+      // Send email notification
+      const emailSent = await sendContactInquiryEmail(contactData);
+      
+      res.status(201).json({ success: true, inquiry, emailSent });
     } catch (error) {
       console.error('Error submitting contact inquiry:', error);
       if (error instanceof Error) {
