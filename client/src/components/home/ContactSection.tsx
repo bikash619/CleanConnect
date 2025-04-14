@@ -48,10 +48,10 @@ export default function ContactSection() {
       const res = await apiRequest("POST", "/api/contact", data);
       return res.json();
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
       toast({
         title: "Message Sent!",
-        description: "Thank you for contacting us. We'll get back to you shortly.",
+        description: `Thank you for contacting us. ${data.emailSent ? "A confirmation email has been sent to your inbox." : ""} We'll get back to you shortly.`,
         variant: "default",
       });
       form.reset();
@@ -86,7 +86,7 @@ export default function ContactSection() {
     {
       icon: "fas fa-envelope",
       title: "Email",
-      content: "info@purpleclean.com"
+      content: "info@sparkpro.com"
     },
     {
       icon: "fas fa-clock",

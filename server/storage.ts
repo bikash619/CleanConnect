@@ -232,7 +232,11 @@ export class MemStorage implements IStorage {
 
   async createService(service: InsertService): Promise<Service> {
     const id = this.serviceCounter++;
-    const newService: Service = { ...service, id };
+    const newService: Service = { 
+      ...service, 
+      id,
+      sortOrder: service.sortOrder || 0
+    };
     this.services.set(id, newService);
     return newService;
   }
@@ -261,7 +265,11 @@ export class MemStorage implements IStorage {
 
   async createTestimonial(testimonial: InsertTestimonial): Promise<Testimonial> {
     const id = this.testimonialCounter++;
-    const newTestimonial: Testimonial = { ...testimonial, id };
+    const newTestimonial: Testimonial = { 
+      ...testimonial, 
+      id,
+      displayOrder: testimonial.displayOrder || 0 
+    };
     this.testimonials.set(id, newTestimonial);
     return newTestimonial;
   }
@@ -298,7 +306,8 @@ export class MemStorage implements IStorage {
       ...booking, 
       id, 
       createdAt: new Date(),
-      status: "pending" 
+      status: "pending",
+      notes: booking.notes || null
     };
     this.bookings.set(id, newBooking);
     return newBooking;
@@ -358,7 +367,11 @@ export class MemStorage implements IStorage {
 
   async createFaq(faq: InsertFaq): Promise<Faq> {
     const id = this.faqCounter++;
-    const newFaq: Faq = { ...faq, id };
+    const newFaq: Faq = { 
+      ...faq, 
+      id,
+      displayOrder: faq.displayOrder || 0
+    };
     this.faqs.set(id, newFaq);
     return newFaq;
   }
