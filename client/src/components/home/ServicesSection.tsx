@@ -13,7 +13,7 @@ export default function ServicesSection() {
       {/* Background decorations */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-light/50 rounded-full -translate-y-1/4 translate-x-1/4"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-light/50 rounded-full translate-y-1/4 -translate-x-1/4"></div>
-
+      
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-accent bg-light px-4 py-1.5 rounded-full mb-4 inline-block">OUR EXPERTISE</span>
@@ -64,26 +64,19 @@ export default function ServicesSection() {
                     {service.price}
                   </div>
                 </div>
-                <CardContent className="p-6 flex flex-col h-full">
+                <CardContent className="p-6">
                   <div className="flex items-center mb-3">
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3">
                       <i className={getServiceIcon(service.name)}></i>
                     </div>
                     <h3 className="font-heading font-semibold text-xl text-primary">{service.name}</h3>
                   </div>
-                  <p className="text-gray-600 mb-6 text-sm flex-grow">{service.description}</p>
-                  <div className="flex flex-col gap-3 mt-auto">
-                    <a href="#booking" className="block">
-                      <Button className="w-full bg-white hover:bg-primary text-primary hover:text-white border border-primary transition-all duration-300 rounded-full shadow-sm hover:shadow-md font-medium">
-                        Book This Service
-                      </Button>
-                    </a>
-                    <a href="#booking" className="block">
-                      <Button className="w-full bg-primary hover:bg-accent text-white transition-all duration-300 rounded-full shadow-sm hover:shadow-md font-medium">
-                        Book a Service
-                      </Button>
-                    </a>
-                  </div>
+                  <p className="text-gray-600 mb-6 text-sm">{service.description}</p>
+                  <a href="#booking" className="block">
+                    <Button className="w-full bg-white hover:bg-primary text-primary hover:text-white border border-primary transition-all duration-300 rounded-full shadow-sm hover:shadow-md font-medium">
+                      Book This Service
+                    </Button>
+                  </a>
                 </CardContent>
               </Card>
             ))}
@@ -114,6 +107,6 @@ function getServiceIcon(serviceName: string): string {
     "Carpet & Upholstery Cleaning": "fas fa-couch",
     "Tile & Grout Cleaning": "fas fa-border-all"
   };
-
+  
   return icons[serviceName] || "fas fa-spray-can-sparkles";
 }
