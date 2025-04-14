@@ -10,7 +10,7 @@ document.head.appendChild(linkElement);
 
 // Add page title and meta description
 const title = document.createElement("title");
-title.textContent = "PurpleClean | Professional Cleaning Services";
+title.textContent = "Spark Pro Cleaning | Professional Cleaning Services";
 document.head.appendChild(title);
 
 const metaDescription = document.createElement("meta");

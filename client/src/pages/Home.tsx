@@ -14,16 +14,16 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>PurpleClean | Professional Cleaning Services</title>
+        <title>Spark Pro Cleaning | Professional Cleaning Services</title>
         <meta name="description" content="Professional home cleaning services tailored to your needs. Book online today for a sparkling clean home." />
         <meta name="keywords" content="cleaning service, house cleaning, professional cleaners, home cleaning, office cleaning" />
-        <meta property="og:title" content="PurpleClean | Professional Cleaning Services" />
+        <meta property="og:title" content="Spark Pro Cleaning | Professional Cleaning Services" />
         <meta property="og:description" content="Professional home cleaning services tailored to your needs." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="PurpleClean | Professional Cleaning Services" />
+        <meta name="twitter:title" content="Spark Pro Cleaning | Professional Cleaning Services" />
         <meta name="twitter:description" content="Professional home cleaning services tailored to your needs." />
-        <link rel="canonical" href="https://purpleclean.com" />
+        <link rel="canonical" href="https://sparkprocleaning.com" />
       </Helmet>
 
       <HeroSection />

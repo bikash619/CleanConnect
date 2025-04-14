@@ -6,8 +6,8 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="font-heading font-bold text-xl mb-4">PurpleClean</h3>
-            <p className="mb-4">Professional cleaning services that deliver exceptional results. We make your home or office sparkle.</p>
+            <h3 className="font-heading font-bold text-xl mb-4">Spark Pro Cleaning</h3>
+            <p className="mb-4">Professional cleaning services that deliver exceptional results. Spark with Pros for your home or office.</p>
             <div className="flex space-x-4">
               <a href="#" className="text-white hover:text-light transition duration-300" aria-label="Facebook">
                 <i className="fab fa-facebook-f"></i>
@@ -59,7 +59,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <i className="fas fa-envelope mr-2"></i>
-                <span>info@purpleclean.com</span>
+                <span>info@sparkpro.com</span>
               </li>
             </ul>
           </div>
@@ -68,7 +68,7 @@ export default function Footer() {
         <hr className="border-gray-700 mb-6" />
         
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p>&copy; {new Date().getFullYear()} PurpleClean. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Spark Pro Cleaning. All rights reserved.</p>
           <div className="mt-4 md:mt-0 flex space-x-6">
             <Link href="/privacy-policy" className="hover:text-light transition duration-300">
               Privacy Policy

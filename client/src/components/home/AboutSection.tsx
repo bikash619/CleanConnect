@@ -20,9 +20,9 @@ export default function AboutSection() {
             />
           </div>
           <div className="md:w-1/2">
-            <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-primary">About PurpleClean</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-primary">About Spark Pro Cleaning</h2>
             <p className="text-gray-600 mb-4">
-              PurpleClean is a professional cleaning service dedicated to providing exceptional cleaning services for homes and businesses. 
+              Spark Pro Cleaning is a professional cleaning service dedicated to providing exceptional cleaning services for homes and businesses. 
               Founded with a passion for cleanliness and a commitment to excellent service, we've quickly become a trusted name in the industry.
             </p>
             <p className="text-gray-600 mb-4">
