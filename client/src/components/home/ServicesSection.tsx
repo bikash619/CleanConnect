@@ -64,15 +64,15 @@ export default function ServicesSection() {
                     {service.price}
                   </div>
                 </div>
-                <CardContent className="p-6">
+                <CardContent className="p-6 flex flex-col h-full">
                   <div className="flex items-center mb-3">
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3">
                       <i className={getServiceIcon(service.name)}></i>
                     </div>
                     <h3 className="font-heading font-semibold text-xl text-primary">{service.name}</h3>
                   </div>
-                  <p className="text-gray-600 mb-6 text-sm">{service.description}</p>
-                  <a href="#booking" className="block">
+                  <p className="text-gray-600 mb-6 text-sm flex-grow">{service.description}</p>
+                  <a href="#booking" className="block mt-auto">
                     <Button className="w-full bg-white hover:bg-primary text-primary hover:text-white border border-primary transition-all duration-300 rounded-full shadow-sm hover:shadow-md font-medium">
                       Book This Service
                     </Button>
