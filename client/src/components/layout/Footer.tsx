@@ -51,15 +51,15 @@ export default function Footer() {
             <ul className="space-y-2">
               <li className="flex items-center">
                 <i className="fas fa-map-marker-alt mr-2"></i>
-                <span>123 Cleaning Street, Suite 456<br/>Sparkle City, SC 12345</span>
+                <span>Sydney, Australia</span>
               </li>
               <li className="flex items-center">
                 <i className="fas fa-phone-alt mr-2"></i>
-                <span>(555) 123-4567</span>
+                <span>0482 089 848</span>
               </li>
               <li className="flex items-center">
                 <i className="fas fa-envelope mr-2"></i>
-                <span>info@sparkpro.com</span>
+                <span>info@sparkpros.com.au</span>
               </li>
             </ul>
           </div>

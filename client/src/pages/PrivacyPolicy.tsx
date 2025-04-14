@@ -80,9 +80,9 @@ export default function PrivacyPolicy() {
                 If you have any questions about this privacy policy or our privacy practices, please contact us at:
               </p>
               <address className="not-italic mt-2">
-                Email: privacy@sparkpro.com<br />
-                Phone: (555) 123-4567<br />
-                Address: 123 Cleaning Street, Suite 456, Sparkle City, SC 12345
+                Email: info@sparkpros.com.au<br />
+                Phone: 0482 089 848<br />
+                Address: Sydney, Australia
               </address>
             </div>
           </CardContent>

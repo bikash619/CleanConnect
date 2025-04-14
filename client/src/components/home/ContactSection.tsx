@@ -76,17 +76,17 @@ export default function ContactSection() {
     {
       icon: "fas fa-map-marker-alt",
       title: "Address",
-      content: "123 Cleaning Street, Suite 456\nSparkle City, SC 12345"
+      content: "Sydney, Australia"
     },
     {
       icon: "fas fa-phone-alt",
       title: "Phone",
-      content: "(555) 123-4567"
+      content: "0482 089 848"
     },
     {
       icon: "fas fa-envelope",
       title: "Email",
-      content: "info@sparkpro.com"
+      content: "info@sparkpros.com.au"
     },
     {
       icon: "fas fa-clock",
@@ -228,7 +228,7 @@ export default function ContactSection() {
           </div>
           <div className="md:w-1/2 bg-primary text-white p-8 flex flex-col justify-center">
             <h3 className="font-heading font-bold text-2xl mb-6">Get In Touch</h3>
-            
+
             <div className="space-y-4">
               {contactInfo.map((info, index) => (
                 <div className="flex items-start" key={index}>
@@ -242,7 +242,7 @@ export default function ContactSection() {
                 </div>
               ))}
             </div>
-            
+
             <div className="mt-8">
               <h4 className="font-heading font-semibold text-lg mb-3">Follow Us</h4>
               <div className="flex flex-wrap gap-4 md:gap-6">

@@ -78,9 +78,9 @@ export default function TermsAndConditions() {
                 If you have any questions about these Terms and Conditions, please contact us at:
               </p>
               <address className="not-italic mt-2">
-                Email: info@sparkpro.com<br />
-                Phone: (555) 123-4567<br />
-                Address: 123 Cleaning Street, Suite 456, Sparkle City, SC 12345
+                Email: info@sparkpros.com.au<br />
+                Phone: 0482 089 848<br />
+                Address: Sydney, Australia
               </address>
             </div>
           </CardContent>
