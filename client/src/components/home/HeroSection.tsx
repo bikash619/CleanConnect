@@ -79,11 +79,11 @@ export default function HeroSection() {
             {/* Image with modern styling */}
             <div className="relative p-3 bg-gradient-to-tr from-white/20 to-white/5 backdrop-blur-sm rounded-2xl shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
                 alt="Professional house cleaning" 
-                className="rounded-xl w-full object-cover h-[400px]" 
-                width="600" 
-                height="400"
+                className="rounded-xl w-full object-cover h-[400px] md:h-[500px] lg:h-[600px] transition-transform hover:scale-[1.02] duration-500" 
+                width="1200" 
+                height="600"
               />
               
               {/* Floating badge */}

@@ -12,11 +12,11 @@ export default function AboutSection() {
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0 md:pr-10">
             <img 
-              src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+              src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
               alt="Our cleaning team" 
-              className="rounded-lg shadow-lg w-full" 
-              width="600" 
-              height="400"
+              className="rounded-lg shadow-xl w-full hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1" 
+              width="1200" 
+              height="800"
             />
           </div>
           <div className="md:w-1/2">

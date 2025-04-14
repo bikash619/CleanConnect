@@ -245,7 +245,7 @@ export default function ContactSection() {
             
             <div className="mt-8">
               <h4 className="font-heading font-semibold text-lg mb-3">Follow Us</h4>
-              <div className="flex space-x-4">
+              <div className="flex flex-wrap gap-4 md:gap-6">
                 <a href="#" className="text-white hover:text-light transition duration-300" aria-label="Facebook">
                   <i className="fab fa-facebook-f text-xl"></i>
                 </a>

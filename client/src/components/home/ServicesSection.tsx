@@ -9,7 +9,7 @@ export default function ServicesSection() {
   });
 
   return (
-    <section id="services" className="py-20 bg-white relative">
+    <section id="services" className="py-24 md:py-32 bg-white relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-light/50 rounded-full -translate-y-1/4 translate-x-1/4"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-light/50 rounded-full translate-y-1/4 -translate-x-1/4"></div>
