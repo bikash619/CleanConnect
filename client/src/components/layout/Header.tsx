@@ -35,10 +35,8 @@ export default function Header() {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <Link href="/">
-            <a className="font-heading font-bold flex items-center">
-              <img src={logoSvg} alt="PurpleClean Logo" className="h-10 w-auto" />
-            </a>
+          <Link href="/" className="font-heading font-bold flex items-center">
+            <img src={logoSvg} alt="PurpleClean Logo" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}

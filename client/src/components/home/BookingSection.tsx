@@ -84,37 +84,91 @@ export default function BookingSection() {
   }
 
   return (
-    <section id="booking" className="py-16 bg-primary text-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl mb-3">Book Your Cleaning Service</h2>
-          <p className="text-light max-w-2xl mx-auto">Schedule your cleaning service in minutes. We'll confirm your booking and send a professional team to your location.</p>
+    <section id="booking" className="py-24 bg-gradient-to-br from-primary/95 to-[#8D70FF]/95 text-white relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute -top-24 -left-24 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl"></div>
+      
+      {/* Animated dots pattern */}
+      <div className="absolute inset-0 z-0 opacity-10">
+        <div className="absolute inset-0" style={{ 
+          backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', 
+          backgroundSize: '30px 30px' 
+        }}></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16 slide-up">
+          <span className="text-sm font-medium bg-white/10 text-white px-4 py-1.5 rounded-full mb-4 inline-block backdrop-blur-sm">
+            EASY BOOKING
+          </span>
+          <h2 className="font-heading font-bold text-4xl md:text-5xl mb-5">Book Your Cleaning Service</h2>
+          <p className="text-white/90 max-w-2xl mx-auto text-lg">
+            Schedule your cleaning service in minutes. We'll confirm your booking and send a professional team to your location.
+          </p>
         </div>
 
-        <Card className="bg-white text-gray-800 rounded-lg shadow-xl max-w-4xl mx-auto overflow-hidden">
+        <Card className="bg-white text-gray-800 rounded-2xl shadow-2xl max-w-5xl mx-auto overflow-hidden border-none">
           <div className="flex flex-col md:flex-row">
-            <div className="md:w-1/3 bg-accent text-white p-8 flex flex-col justify-center">
-              <h3 className="font-heading font-bold text-2xl mb-4">Your Clean Home Is Just A Few Clicks Away</h3>
-              <ul className="space-y-4">
-                <li className="flex items-center">
-                  <i className="fas fa-check-circle mr-3 text-xl"></i>
-                  <span>100% Satisfaction Guarantee</span>
-                </li>
-                <li className="flex items-center">
-                  <i className="fas fa-check-circle mr-3 text-xl"></i>
-                  <span>Professional, Vetted Cleaners</span>
-                </li>
-                <li className="flex items-center">
-                  <i className="fas fa-check-circle mr-3 text-xl"></i>
-                  <span>Flexible Scheduling</span>
-                </li>
-                <li className="flex items-center">
-                  <i className="fas fa-check-circle mr-3 text-xl"></i>
-                  <span>Easy Online Booking</span>
-                </li>
-              </ul>
+            <div className="md:w-2/5 bg-gradient-to-br from-primary to-[#8D70FF] text-white p-10 flex flex-col justify-center relative">
+              <div className="absolute top-0 left-0 w-full h-full opacity-10">
+                <div className="absolute inset-0" style={{ 
+                  backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', 
+                  backgroundSize: '20px 20px' 
+                }}></div>
+              </div>
+              
+              <div className="relative z-10">
+                <h3 className="font-heading font-bold text-2xl mb-6">Your Clean Home Is Just A Few Clicks Away</h3>
+                
+                <ul className="space-y-6">
+                  <li className="flex items-start">
+                    <div className="bg-white/20 rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-0.5 backdrop-blur-sm">
+                      <i className="fas fa-shield-alt text-lg"></i>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-lg mb-1">100% Satisfaction Guarantee</h4>
+                      <p className="text-white/80 text-sm">If you're not satisfied, we'll re-clean at no extra cost</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="bg-white/20 rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-0.5 backdrop-blur-sm">
+                      <i className="fas fa-user-check text-lg"></i>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-lg mb-1">Professional, Vetted Cleaners</h4>
+                      <p className="text-white/80 text-sm">All staff are background-checked and highly trained</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="bg-white/20 rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-0.5 backdrop-blur-sm">
+                      <i className="fas fa-calendar-alt text-lg"></i>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-lg mb-1">Flexible Scheduling</h4>
+                      <p className="text-white/80 text-sm">Choose times that work for your busy schedule</p>
+                    </div>
+                  </li>
+                </ul>
+                
+                {/* Trustpilot-style rating widget */}
+                <div className="mt-10 p-4 bg-white/10 rounded-xl backdrop-blur-sm">
+                  <div className="flex items-center mb-2">
+                    <div className="text-[#00b67a] flex mr-2">
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                    </div>
+                    <span className="text-sm">5.0 rating</span>
+                  </div>
+                  <p className="text-sm text-white/90">Based on <span className="font-medium">200+</span> satisfied customers</p>
+                </div>
+              </div>
             </div>
-            <div className="md:w-2/3 p-8">
+            
+            <div className="md:w-3/5 p-10">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -130,7 +184,7 @@ export default function BookingSection() {
                             disabled={isSubmitting}
                           >
                             <FormControl>
-                              <SelectTrigger className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-accent focus:border-accent">
+                              <SelectTrigger className="w-full p-3 border-none bg-light rounded-lg focus:ring-2 focus:ring-primary/40 shadow-sm hover:bg-light/70 transition-all duration-300 form-field">
                                 <SelectValue placeholder="Select a service" />
                               </SelectTrigger>
                             </FormControl>
@@ -159,7 +213,7 @@ export default function BookingSection() {
                             disabled={isSubmitting}
                           >
                             <FormControl>
-                              <SelectTrigger className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-accent focus:border-accent">
+                              <SelectTrigger className="w-full p-3 border-none bg-light rounded-lg focus:ring-2 focus:ring-primary/40 shadow-sm hover:bg-light/70 transition-all duration-300 form-field">
                                 <SelectValue placeholder="Select home size" />
                               </SelectTrigger>
                             </FormControl>
@@ -208,7 +262,7 @@ export default function BookingSection() {
                           disabled={isSubmitting}
                         >
                           <FormControl>
-                            <SelectTrigger className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-accent focus:border-accent">
+                            <SelectTrigger className="w-full p-3 border-none bg-light rounded-lg focus:ring-2 focus:ring-primary/40 shadow-sm hover:bg-light/70 transition-all duration-300 form-field">
                               <SelectValue placeholder="Select a time slot" />
                             </SelectTrigger>
                           </FormControl>
