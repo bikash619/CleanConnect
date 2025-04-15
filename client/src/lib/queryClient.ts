@@ -31,10 +31,10 @@ type UnauthorizedBehavior = "returnNull" | "throw";
 
 export const getQueryFn = 
   ({ on401: unauthorizedBehavior }: { on401: UnauthorizedBehavior }) =>
-  async ({ queryKey }: { queryKey: string[] }): Promise<any> => {
+  async ({ queryKey }: any): Promise<any> => {
     // If we're in Vercel production, return static data instead of making API calls
     if (isVercelProduction) {
-      const url = queryKey[0];
+      const url = queryKey[0] as string;
       
       if (url === '/api/services') {
         return staticServices;
@@ -46,7 +46,7 @@ export const getQueryFn =
     }
     
     // Normal API call for local development or other environments
-    const res = await fetch(queryKey[0], {
+    const res = await fetch(queryKey[0] as string, {
       credentials: "include",
     });
 

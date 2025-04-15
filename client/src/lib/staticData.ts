@@ -6,7 +6,7 @@ export const staticServices: Service[] = [
     id: 1,
     name: "Regular Cleaning",
     description: "Comprehensive cleaning service for your home or office on a weekly, bi-weekly, or monthly schedule.",
-    imageUrl: "https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageUrl: "/services/general-cleaning.jpg",
     price: "From $120",
     sortOrder: 1
   },
@@ -14,7 +14,7 @@ export const staticServices: Service[] = [
     id: 2,
     name: "Deep Cleaning",
     description: "Thorough cleaning of all areas, including hard-to-reach spots, appliances, fixtures, and detailed attention.",
-    imageUrl: "https://images.pexels.com/photos/4108719/pexels-photo-4108719.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageUrl: "/services/general-cleaning.jpg",
     price: "From $250",
     sortOrder: 2
   },
@@ -22,7 +22,7 @@ export const staticServices: Service[] = [
     id: 3,
     name: "Move In/Out Cleaning",
     description: "Complete cleaning service for when you're moving in or out of a property, ensuring it's pristine for the next occupants.",
-    imageUrl: "https://images.pexels.com/photos/4439454/pexels-photo-4439454.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageUrl: "/services/bond-cleaning.jpg",
     price: "From $350",
     sortOrder: 3
   },
@@ -30,7 +30,7 @@ export const staticServices: Service[] = [
     id: 4,
     name: "Window Cleaning",
     description: "Professional cleaning of interior and exterior windows for a streak-free, crystal-clear view.",
-    imageUrl: "https://images.pexels.com/photos/4108815/pexels-photo-4108815.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageUrl: "/services/window-cleaning.jpg",
     price: "From $75",
     sortOrder: 4
   },
@@ -38,7 +38,7 @@ export const staticServices: Service[] = [
     id: 5,
     name: "Gutters Cleaning",
     description: "Removal of debris and blockages from gutters to ensure proper water flow and prevent damage.",
-    imageUrl: "https://images.pexels.com/photos/4108765/pexels-photo-4108765.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageUrl: "/services/gutters-cleaning.jpg",
     price: "From $120",
     sortOrder: 5
   },
@@ -46,7 +46,7 @@ export const staticServices: Service[] = [
     id: 6,
     name: "Blinds Cleaning",
     description: "Detailed cleaning of all types of blinds to remove dust and allergens for a healthier home.",
-    imageUrl: "https://images.pexels.com/photos/7166905/pexels-photo-7166905.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageUrl: "/services/blinds-cleaning.jpg",
     price: "From $90",
     sortOrder: 6
   },
@@ -54,7 +54,7 @@ export const staticServices: Service[] = [
     id: 7,
     name: "Carpet & Upholstery Cleaning",
     description: "Deep cleaning for carpets and upholstery to remove stains, odors, and allergens.",
-    imageUrl: "https://images.pexels.com/photos/4108732/pexels-photo-4108732.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageUrl: "/services/carpet-upholstery-cleaning.jpg",
     price: "From $120",
     sortOrder: 7
   },
@@ -62,7 +62,7 @@ export const staticServices: Service[] = [
     id: 8,
     name: "Tile & Grout Cleaning",
     description: "Professional cleaning of tile surfaces and grout lines to restore their original appearance.",
-    imageUrl: "https://images.pexels.com/photos/4108775/pexels-photo-4108775.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageUrl: "/services/tile-grout-cleaning.jpg",
     price: "From $180",
     sortOrder: 8
   }
