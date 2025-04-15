@@ -6,19 +6,18 @@ import { Link } from "wouter";
 import { staticServices } from "@/lib/staticData";
 import { ServiceImage } from "@/components/ui/service-image";
 
-// Check if we're in a production environment (Vercel deployment)
-const isVercelProduction = import.meta.env.PROD && window.location.hostname.includes('vercel.app');
+// Check if we're in a production environment (works on any domain)
+const isProdEnv = import.meta.env.PROD;
 
 export default function ServicesSection() {
   const { data: services, isLoading, error } = useQuery<Service[]>({
     queryKey: ['/api/services'],
-    // Use static data if on Vercel
-    enabled: !isVercelProduction,
-    initialData: isVercelProduction ? staticServices : undefined,
+    enabled: !isProdEnv,
+    initialData: isProdEnv ? staticServices : undefined,
   });
 
-  // Use static data directly if on Vercel
-  const allServices = isVercelProduction ? staticServices : services;
+  // Use static data directly if in production
+  const allServices = isProdEnv ? staticServices : services;
   
   // Featured services - show only 4 on the homepage
   const featuredServices = allServices?.slice(0, 4);
@@ -45,14 +44,14 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        {isLoading && !isVercelProduction && (
+        {isLoading && !isProdEnv && (
           <div className="text-center py-10">
             <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary border-t-2"></div>
             <p className="mt-4 text-gray-500">Loading our professional services...</p>
           </div>
         )}
 
-        {error && !isVercelProduction && (
+        {error && !isProdEnv && (
           <div className="text-center py-10 bg-red-50 rounded-lg border border-red-100 p-6">
             <div className="text-red-500 text-4xl mb-3">
               <i className="fas fa-exclamation-circle"></i>

@@ -3,6 +3,8 @@ import { staticServices, staticTestimonials, staticFaqs } from "./staticData";
 
 // Check if we're in a production environment (Vercel deployment)
 const isVercelProduction = import.meta.env.PROD && window.location.hostname.includes('vercel.app');
+// Check if we're in a production environment (works on any domain)
+const isProdEnv = import.meta.env.PROD;
 
 async function throwIfResNotOk(res: Response) {
   if (!res.ok) {
@@ -34,6 +36,19 @@ export const getQueryFn =
   async ({ queryKey }: any): Promise<any> => {
     // If we're in Vercel production, return static data instead of making API calls
     if (isVercelProduction) {
+      const url = queryKey[0] as string;
+      
+      if (url === '/api/services') {
+        return staticServices;
+      } else if (url === '/api/testimonials') {
+        return staticTestimonials;
+      } else if (url === '/api/faqs') {
+        return staticFaqs;
+      }
+    }
+    
+    // If we're in any production environment, use static data instead of making API calls
+    if (isProdEnv) {
       const url = queryKey[0] as string;
       
       if (url === '/api/services') {
