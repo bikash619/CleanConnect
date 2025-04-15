@@ -4,50 +4,50 @@ import { Service, Testimonial, Faq } from "@shared/schema";
 export const staticServices: Service[] = [
   {
     id: 1,
-    name: "Window Cleaning",
-    description: "Professional window cleaning for crystal clear results.",
-    imageUrl: "https://images.pexels.com/photos/4108815/pexels-photo-4108815.jpeg?auto=compress&cs=tinysrgb&w=600",
-    price: "From $80",
+    name: "Regular Cleaning",
+    description: "Comprehensive cleaning service for your home or office on a weekly, bi-weekly, or monthly schedule.",
+    imageUrl: "https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=600",
+    price: "From $120",
     sortOrder: 1
   },
   {
     id: 2,
-    name: "Gutters Cleaning",
-    description: "Complete gutter cleaning to remove debris and ensure proper water flow.",
-    imageUrl: "https://images.pexels.com/photos/4108765/pexels-photo-4108765.jpeg?auto=compress&cs=tinysrgb&w=600",
-    price: "From $120",
+    name: "Deep Cleaning",
+    description: "Thorough cleaning of all areas, including hard-to-reach spots, appliances, fixtures, and detailed attention.",
+    imageUrl: "https://images.pexels.com/photos/4108719/pexels-photo-4108719.jpeg?auto=compress&cs=tinysrgb&w=600",
+    price: "From $250",
     sortOrder: 2
   },
   {
     id: 3,
-    name: "Bond Cleaning",
-    description: "Thorough end of lease cleaning to ensure you get your deposit back.",
+    name: "Move In/Out Cleaning",
+    description: "Complete cleaning service for when you're moving in or out of a property, ensuring it's pristine for the next occupants.",
     imageUrl: "https://images.pexels.com/photos/4439454/pexels-photo-4439454.jpeg?auto=compress&cs=tinysrgb&w=600",
-    price: "From $250",
+    price: "From $350",
     sortOrder: 3
   },
   {
     id: 4,
-    name: "Solar Panel Cleaning",
-    description: "Professional cleaning to maintain the efficiency of your solar panels.",
-    imageUrl: "https://images.pexels.com/photos/9875441/pexels-photo-9875441.jpeg?auto=compress&cs=tinysrgb&w=600",
-    price: "From $150",
+    name: "Window Cleaning",
+    description: "Professional cleaning of interior and exterior windows for a streak-free, crystal-clear view.",
+    imageUrl: "https://images.pexels.com/photos/4108815/pexels-photo-4108815.jpeg?auto=compress&cs=tinysrgb&w=600",
+    price: "From $75",
     sortOrder: 4
   },
   {
     id: 5,
-    name: "Regular Cleaning",
-    description: "Comprehensive cleaning service for your home or office on a weekly, bi-weekly, or monthly schedule.",
-    imageUrl: "https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=600",
+    name: "Gutters Cleaning",
+    description: "Removal of debris and blockages from gutters to ensure proper water flow and prevent damage.",
+    imageUrl: "https://images.pexels.com/photos/4108765/pexels-photo-4108765.jpeg?auto=compress&cs=tinysrgb&w=600",
     price: "From $120",
     sortOrder: 5
   },
   {
     id: 6,
-    name: "Deep Cleaning",
-    description: "Thorough cleaning of all areas, including hard-to-reach spots, appliances, fixtures, and detailed attention.",
-    imageUrl: "https://images.pexels.com/photos/4108719/pexels-photo-4108719.jpeg?auto=compress&cs=tinysrgb&w=600",
-    price: "From $220",
+    name: "Blinds Cleaning",
+    description: "Detailed cleaning of all types of blinds to remove dust and allergens for a healthier home.",
+    imageUrl: "https://images.pexels.com/photos/7166905/pexels-photo-7166905.jpeg?auto=compress&cs=tinysrgb&w=600",
+    price: "From $90",
     sortOrder: 6
   },
   {
