@@ -9,6 +9,18 @@ import { staticServices } from "@/lib/staticData";
 // Check if we're in a production environment (Vercel deployment)
 const isVercelProduction = import.meta.env.PROD && window.location.hostname.includes('vercel.app');
 
+// Helper function to get the correct link path for each service
+function getServicePath(serviceName: string): string {
+  const serviceMap: Record<string, string> = {
+    "Window Cleaning": "/services/window-cleaning",
+    "Gutters Cleaning": "/services/gutters-cleaning",
+    "Bond Cleaning": "/services/bond-cleaning",
+    "Solar Panel Cleaning": "/services/solar-panel-cleaning"
+  };
+  
+  return serviceMap[serviceName] || `/services/${serviceName.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`;
+}
+
 export default function ServicesSection() {
   const { data: services, isLoading, error } = useQuery<Service[]>({
     queryKey: ['/api/services'],
@@ -99,7 +111,7 @@ export default function ServicesSection() {
                       <Link href="#booking">Book Now</Link>
                     </Button>
                     <Button asChild className="bg-white text-primary border border-primary hover:bg-primary/10">
-                      <Link href={`/services/${service.name.toLowerCase().replace(/\s+/g, '-')}`}>Details</Link>
+                      <Link href={getServicePath(service.name)}>Details</Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -123,12 +135,12 @@ export default function ServicesSection() {
 
 function getServiceIcon(serviceName: string): string | undefined {
   const serviceIcons: Record<string, string> = {
-    "Regular Cleaning": "fas fa-broom",
-    "Deep Cleaning": "fas fa-soap",
-    "Move In/Out Cleaning": "fas fa-truck-ramp-box",
     "Window Cleaning": "fas fa-window-maximize",
     "Gutters Cleaning": "fas fa-house-chimney",
-    "Blinds Cleaning": "fas fa-shower",
+    "Bond Cleaning": "fas fa-key",
+    "Solar Panel Cleaning": "fas fa-solar-panel",
+    "Regular Cleaning": "fas fa-broom",
+    "Deep Cleaning": "fas fa-soap",
     "Carpet & Upholstery Cleaning": "fas fa-couch",
     "Tile & Grout Cleaning": "fas fa-brush"
   };
