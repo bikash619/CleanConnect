@@ -64,7 +64,7 @@ export default function ServicesSection() {
         {featuredServices && featuredServices.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
             {featuredServices.map((service) => (
-              <Card key={service.id} className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 slide-up">
+              <Card key={service.id} className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 slide-up h-full">
                 <div className="relative h-56 overflow-hidden">
                   <img 
                     src={service.imageUrl}  
@@ -72,9 +72,16 @@ export default function ServicesSection() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                     width="320" 
                     height="224"
+                    loading="eager"
+                    onError={(e) => {
+                      // Fallback to a default image if the service image fails to load
+                      const target = e.target as HTMLImageElement;
+                      target.onerror = null;
+                      target.src = "https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=600";
+                    }}
                   />
                 </div>
-                <CardContent className="p-6">
+                <CardContent className="p-6 flex flex-col h-full">
                   <div className="flex items-center mb-2">
                     <span className="flex items-center justify-center w-10 h-10 mr-3 rounded-full bg-primary/10">
                       <i className={getServiceIcon(service.name) || "fas fa-spray-can-sparkles"}></i>
@@ -83,7 +90,7 @@ export default function ServicesSection() {
                   </div>
                   <p className="text-gray-600 mb-3 line-clamp-2">{service.description}</p>
                   <p className="font-heading font-semibold text-primary mb-4">{service.price}</p>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-3 mt-auto">
                     <Button 
                       asChild
                       variant="outline" 

@@ -29,26 +29,24 @@ export async function apiRequest(
 
 type UnauthorizedBehavior = "returnNull" | "throw";
 
-export const getQueryFn: <T>(options: {
-  on401: UnauthorizedBehavior;
-}) => QueryFunction<T> =
-  ({ on401: unauthorizedBehavior }) =>
-  async ({ queryKey }) => {
+export const getQueryFn = 
+  ({ on401: unauthorizedBehavior }: { on401: UnauthorizedBehavior }) =>
+  async ({ queryKey }: { queryKey: string[] }): Promise<any> => {
     // If we're in Vercel production, return static data instead of making API calls
     if (isVercelProduction) {
-      const url = queryKey[0] as string;
+      const url = queryKey[0];
       
       if (url === '/api/services') {
-        return staticServices as unknown as T;
+        return staticServices;
       } else if (url === '/api/testimonials') {
-        return staticTestimonials as unknown as T;
+        return staticTestimonials;
       } else if (url === '/api/faqs') {
-        return staticFaqs as unknown as T;
+        return staticFaqs;
       }
     }
     
     // Normal API call for local development or other environments
-    const res = await fetch(queryKey[0] as string, {
+    const res = await fetch(queryKey[0], {
       credentials: "include",
     });
 
@@ -63,7 +61,7 @@ export const getQueryFn: <T>(options: {
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      queryFn: getQueryFn({ on401: "throw" }),
+      queryFn: getQueryFn({ on401: "throw" }) as any,
       refetchInterval: false,
       refetchOnWindowFocus: false,
       staleTime: Infinity,

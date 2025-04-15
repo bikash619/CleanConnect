@@ -22,7 +22,7 @@ export const staticServices: Service[] = [
     id: 3,
     name: "Move In/Out Cleaning",
     description: "Complete cleaning service for when you're moving in or out of a property, ensuring it's pristine for the next occupants.",
-    imageUrl: "https://images.pexels.com/photos/4108821/pexels-photo-4108821.jpeg?auto=compress&cs=tinysrgb&w=600",
+    imageUrl: "https://images.pexels.com/photos/4439454/pexels-photo-4439454.jpeg?auto=compress&cs=tinysrgb&w=600",
     price: "From $350",
     sortOrder: 3
   },
