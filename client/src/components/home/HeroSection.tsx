@@ -31,7 +31,7 @@ export default function HeroSection() {
               </span> <br className="hidden lg:block" />For Your Home & Office
             </h1>
             <p className="text-lg md:text-xl mb-10 text-white/90 max-w-xl leading-relaxed">
-              Experience exceptional cleaning services that transform your space. Our professional team delivers spotless results that exceed expectations every time.
+              Dream of a Clean World? Begin with Your House.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
               <a href="#booking">
