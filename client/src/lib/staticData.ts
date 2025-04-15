@@ -3,38 +3,6 @@ import { Service, Testimonial, Faq } from "@shared/schema";
 // Static data for services
 export const staticServices: Service[] = [
   {
-    id: 1,
-    name: "Regular Cleaning",
-    description: "Comprehensive cleaning service for your home or office on a weekly, bi-weekly, or monthly schedule.",
-    imageUrl: "/services/general-cleaning.jpg",
-    price: "From $120",
-    sortOrder: 1
-  },
-  {
-    id: 2,
-    name: "Deep Cleaning",
-    description: "Thorough cleaning of all areas, including hard-to-reach spots, appliances, fixtures, and detailed attention.",
-    imageUrl: "/services/general-cleaning.jpg",
-    price: "From $250",
-    sortOrder: 2
-  },
-  {
-    id: 3,
-    name: "Move In/Out Cleaning",
-    description: "Complete cleaning service for when you're moving in or out of a property, ensuring it's pristine for the next occupants.",
-    imageUrl: "/services/bond-cleaning.jpg",
-    price: "From $350",
-    sortOrder: 3
-  },
-  {
-    id: 4,
-    name: "Window Cleaning",
-    description: "Professional cleaning of interior and exterior windows for a streak-free, crystal-clear view.",
-    imageUrl: "/services/window-cleaning.jpg",
-    price: "From $75",
-    sortOrder: 4
-  },
-  {
     id: 5,
     name: "Gutters Cleaning",
     description: "Removal of debris and blockages from gutters to ensure proper water flow and prevent damage.",
