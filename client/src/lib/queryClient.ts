@@ -1,4 +1,8 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
+import { staticServices, staticTestimonials, staticFaqs } from "./staticData";
+
+// Check if we're in a production environment (Vercel deployment)
+const isVercelProduction = import.meta.env.PROD && window.location.hostname.includes('vercel.app');
 
 async function throwIfResNotOk(res: Response) {
   if (!res.ok) {
@@ -24,11 +28,26 @@ export async function apiRequest(
 }
 
 type UnauthorizedBehavior = "returnNull" | "throw";
+
 export const getQueryFn: <T>(options: {
   on401: UnauthorizedBehavior;
 }) => QueryFunction<T> =
   ({ on401: unauthorizedBehavior }) =>
   async ({ queryKey }) => {
+    // If we're in Vercel production, return static data instead of making API calls
+    if (isVercelProduction) {
+      const url = queryKey[0] as string;
+      
+      if (url === '/api/services') {
+        return staticServices as unknown as T;
+      } else if (url === '/api/testimonials') {
+        return staticTestimonials as unknown as T;
+      } else if (url === '/api/faqs') {
+        return staticFaqs as unknown as T;
+      }
+    }
+    
+    // Normal API call for local development or other environments
     const res = await fetch(queryKey[0] as string, {
       credentials: "include",
     });

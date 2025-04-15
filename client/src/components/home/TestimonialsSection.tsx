@@ -1,11 +1,21 @@
 import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { Testimonial } from "@shared/schema";
+import { staticTestimonials } from "@/lib/staticData";
+
+// Check if we're in a production environment (Vercel deployment)
+const isVercelProduction = import.meta.env.PROD && window.location.hostname.includes('vercel.app');
 
 export default function TestimonialsSection() {
   const { data: testimonials, isLoading, error } = useQuery<Testimonial[]>({
     queryKey: ['/api/testimonials'],
+    // Use static data if on Vercel
+    enabled: !isVercelProduction,
+    initialData: isVercelProduction ? staticTestimonials : undefined,
   });
+
+  // Use static data directly if on Vercel
+  const displayTestimonials = isVercelProduction ? staticTestimonials : testimonials;
 
   return (
     <section id="testimonials" className="py-16 bg-white">
@@ -15,22 +25,22 @@ export default function TestimonialsSection() {
           <p className="text-gray-600 max-w-2xl mx-auto">Don't just take our word for it. Here's what our satisfied customers have to say.</p>
         </div>
 
-        {isLoading && (
+        {isLoading && !isVercelProduction && (
           <div className="text-center py-10">
             <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
             <p className="mt-2">Loading testimonials...</p>
           </div>
         )}
 
-        {error && (
+        {error && !isVercelProduction && (
           <div className="text-center py-10 text-red-500">
             <p>Error loading testimonials. Please try again later.</p>
           </div>
         )}
 
-        {testimonials && (
+        {displayTestimonials && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial) => (
+            {displayTestimonials.map((testimonial) => (
               <Card key={testimonial.id} className="bg-light rounded-lg p-6 shadow-md relative">
                 <div className="text-accent text-4xl absolute -top-4 left-4">
                   <i className="fas fa-quote-left"></i>
