@@ -40,6 +40,19 @@ export default function TrustIndicators() {
             </div>
           ))}
         </div>
+        
+        {/* Trust partners */}
+        <div className="mt-12 pt-8 border-t border-gray-100">
+          <div className="text-center mb-6">
+            <span className="text-sm text-gray-500 uppercase tracking-wider font-medium">Trusted By</span>
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16 opacity-70">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Domain_logo.svg/320px-Domain_logo.svg.png" alt="Domain" className="h-6 md:h-8" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Airbnb_Logo_B%C3%A9lo.svg/320px-Airbnb_Logo_B%C3%A9lo.svg.png" alt="Airbnb" className="h-6 md:h-8" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Mirvac_logo.svg/320px-Mirvac_logo.svg.png" alt="Mirvac" className="h-6 md:h-8" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Ray_White_logo.svg/320px-Ray_White_logo.svg.png" alt="Ray White" className="h-6 md:h-8" />
+          </div>
+        </div>
       </div>
     </section>
   );
