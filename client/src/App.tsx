@@ -14,6 +14,10 @@ import WindowCleaning from "@/pages/services/WindowCleaning";
 import GuttersCleaning from "@/pages/services/GuttersCleaning";
 import BondCleaning from "@/pages/services/BondCleaning";
 import SolarPanelCleaning from "@/pages/services/SolarPanelCleaning";
+import GeneralCleaning from "@/pages/services/GeneralCleaning";
+import BlindsCleaning from "@/pages/services/BlindsCleaning";
+import CarpetUpholsteryCleaning from "@/pages/services/CarpetUpholsteryCleaning";
+import TileGroutCleaning from "@/pages/services/TileGroutCleaning";
 
 function Router() {
   return (
@@ -26,6 +30,10 @@ function Router() {
       <Route path="/services/gutters-cleaning" component={GuttersCleaning} />
       <Route path="/services/bond-cleaning" component={BondCleaning} />
       <Route path="/services/solar-panel-cleaning" component={SolarPanelCleaning} />
+      <Route path="/services/general-cleaning" component={GeneralCleaning} />
+      <Route path="/services/blinds-cleaning" component={BlindsCleaning} />
+      <Route path="/services/carpet-upholstery-cleaning" component={CarpetUpholsteryCleaning} />
+      <Route path="/services/tile-grout-cleaning" component={TileGroutCleaning} />
       <Route component={NotFound} />
     </Switch>
   );
